@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Couleurs fun JavaScript</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <div class="P6-mainDiv">
+        <div class="P6-inputsColor">
+            <div class="P6-inputColor P6-inputColor1">
+                <label for="color1" class="P6-colorInputLabel">#FF5F6D</label>
+                <input type="color" class="P6-hiddenInput" id="color1">
+            </div>
+            <div class="P6-inputColor P6-inputColor2">
+                <label for="color2" class="P6-colorInputLabel">#FFC371</label>
+                <input type="color" class="P6-hiddenInput" id="color2">
+            </div>
+        </div>
+        <div class="P6-inputsRange">
+            <div class="P6-labelsRange">
+                <div>Orientation :</div>
+                <label for="range" class="P6-labelRange">90°</label>
+            </div>
+            <input type="range" min="0" max="360" value="90" id="range">
+        </div>
+        <div class="P6-inputsButton">
+            <input type="button" class="P6-button" value="Copier">
+            <input type="button" class="P6-button" value="Random">
+        </div>
+    </div>
+
+
+
 
     <script src="app.js"></script>
 </body>
+
 </html>
