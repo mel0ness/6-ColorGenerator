@@ -102,3 +102,19 @@ setTimeout(
 //   function rgbToHex(r, g, b) {
 //     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
 //   }
+
+console.log((Math.random()*360).toFixed(0));
+console.log((Math.random()*360).toFixed(0));
+console.log((Math.random()*360).toFixed(0));
+console.log((Math.random()*360).toFixed(0));
+console.log((Math.random()*360).toFixed(0));
+console.log((Math.random()*360).toFixed(0));
+console.log((Math.random()*360).toFixed(0));
+console.log((Math.random()*360).toFixed(0));
+console.log((Math.random()*360).toFixed(0));
+console.log((Math.random()*360).toFixed(0));
+console.log((Math.random()*360).toFixed(0));
+console.log((Math.random()*360).toFixed(0));
+console.log((Math.random()*360).toFixed(0));
+console.log((Math.random()*360).toFixed(0));
+console.log((Math.random()*360).toFixed(0));
