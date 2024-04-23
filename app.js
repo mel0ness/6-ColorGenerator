@@ -9,7 +9,8 @@ const range = document.getElementById("range")
 const deg = document.getElementById("orientation")
 const copy = document.getElementById("copy")
 const modale = document.getElementById("modale")
-
+const random = document.getElementById("random")
+let colors = [];
 
 colorOne.addEventListener("change", () => {
     labelOne.style.backgroundColor = colorOne.value;
@@ -93,28 +94,43 @@ setTimeout(
 )
 }
 
+random.addEventListener("click", () => {
+randomColor(colorOne, labelOne, labelNameOne, 0, 1, 2);
+randomColor(colorTwo, labelTwo, labelNameTwo, 3, 4, 5);
+randomRange();
+hex_to_RGB(colorOne.value, labelOne)
+hex_to_RGB(colorTwo.value, labelTwo)
+changeBodyBack(range.value, colorOne.value, colorTwo.value);
+})
 
-// function componentToHex(c) {
-//     var hex = c.toString(16);
-//     return hex.length == 1 ? "0" + hex : hex;
-//   }
-  
-//   function rgbToHex(r, g, b) {
-//     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-//   }
 
-console.log((Math.random()*360).toFixed(0));
-console.log((Math.random()*360).toFixed(0));
-console.log((Math.random()*360).toFixed(0));
-console.log((Math.random()*360).toFixed(0));
-console.log((Math.random()*360).toFixed(0));
-console.log((Math.random()*360).toFixed(0));
-console.log((Math.random()*360).toFixed(0));
-console.log((Math.random()*360).toFixed(0));
-console.log((Math.random()*360).toFixed(0));
-console.log((Math.random()*360).toFixed(0));
-console.log((Math.random()*360).toFixed(0));
-console.log((Math.random()*360).toFixed(0));
-console.log((Math.random()*360).toFixed(0));
-console.log((Math.random()*360).toFixed(0));
-console.log((Math.random()*360).toFixed(0));
+
+const randomColor = (color, label, labelName, iOne, iTwo, iThree) => {
+
+let r = (Math.random()*255).toFixed(0)
+let g = (Math.random()*255).toFixed(0)
+let b = (Math.random()*255).toFixed(0)
+
+toHex(r, iOne);
+toHex(g, iTwo);
+toHex(b, iThree);
+
+color.value = `#${colors[iOne]}${colors[iTwo]}${colors[iThree]}`;
+
+label.style.backgroundColor = color.value;
+labelName.textContent = color.value.toUpperCase();
+
+}
+const toHex = (e, f) => {
+    let hex = parseInt(e).toString(16);
+ hex.length === 1 ? hex = "0" + hex : hex = hex;
+ colors[f] = hex;
+ 
+}
+
+const randomRange = () => {
+    let rangeProv = (Math.random()*360).toFixed(0)
+
+    range.value = rangeProv;
+    deg.textContent = `${range.value}°`;
+}
