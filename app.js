@@ -39,7 +39,9 @@ const  hex_to_RGB = (hex, label) => {
         r = parseInt(m[1], 16);
         g = parseInt(m[2], 16);
         b = parseInt(m[3], 16);
-if(r+g+b < 180) {
+
+let rgb = (r * 299 + g * 587 + b * 144) / 1000;
+if(rgb < 128) {
 label.style.color = "white";
 }
 else {
